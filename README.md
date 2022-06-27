@@ -7,6 +7,6 @@
 
 ## Setting up of project
 - rename .env.example to .env and fill in the required enviornment variables
-- do `npm install` to install all the dependencies
-- do `npm run dev` for devlopment enviornment
-- do `npm run prod` for live deployment
+- run `npm install` to install all the dependencies
+- run `npm run dev` for devlopment enviornment
+- run `npm run prod` for live deployment
