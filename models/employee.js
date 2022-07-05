@@ -38,11 +38,11 @@ employeeSchema.virtual('fullName').get(function() {
 })
 
 // Instance Methods
-// Find Simmilar Role Types
+// Find Simmilar Role Types to be used later
 employeeSchema.methods.findSimmilarRole = function(emp) {
     return mongoose.model('Employee').find({type: this.type}, emp)
 }
-// Find Simmilar status
+// Find Simmilar status to be used later
 employeeSchema.methods.findSimmilarStatus = function(emp) {
     return mongoose.model('Employee').find({active: this.active}, emp)
 }
