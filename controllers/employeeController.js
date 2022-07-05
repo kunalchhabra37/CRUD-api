@@ -2,27 +2,6 @@ const Employee = require('../models/employee')
 
 // Read All
 exports.index = async (req, res) => {
-    // console.log(req.protocol)// `http` - Protocol [type: String]
-    // console.log(req.hostname)// `localhost` - only hostname [type: String]
-    // console.log(req.get('host'))// `localhost:5000` - hostname with PORT [type: String]
-    // console.log(req.originalUrl)//` /api/employees` - request URL [type: String]  
-    // console.log(req.baseUrl)// `/api/employees` - request URL [type: String]  
-    // console.log(req.params)// `{}` - URL Parameters [type: Object] 
-    // console.log(req.query)// `{}` - URL Query Parameters [type: Object]
-    // console.log(req.body)// `{}` - Body Sent With request [type: Object]
-    // console.log(req.ip)// `::1` - Request IP [type: String]
-    // console.log(req.ips)// `[]` - Request IP if with proxies and reidrects [type: Array]
-    // console.log(req.path)// `/` - Path of URL requested [type: String] 
-    // console.log(req.method)// `GET` - Request Type Method [type: String]
-    // console.log(req.rawHeaders)// [ 'User-Agent','PostmanRuntime/7.29.0','Accept','*/*','Postman-Token','a897d7f2-a69c-4244-a00c-4d337626879b','Host','localhost:5000','Accept-Encoding','gzip, deflate, br','Connection','keep-alive']
-    // // - All Headers sent with Request [type: Array]
-    // console.log(req.subdomains)// `[]` - Subdomains of Request [type: Array]
-    // console.log(req.route)// Route {path: '/',stack: [Layer {handle: [AsyncFunction (anonymous)],name: '<anonymous>',params: undefined,path: undefined,keys: [],regexp: /^\/?$/i, method: 'get'}],methods: { get: true }}
-    // // - Get Currently matched Routes [type: Route Object]
-    // console.log(req.cookies)// `undefined` - Cookies Sent by Object [type: String]
-    // console.log(req.get('Content-Type')) // `undefined` - Request header feild Conten-Type [type: String]
-    // console.log(req.get('User-Agent'))// `PostmanRuntime/7.29.0` Request header feild User-Agent(Request Host) [type: String]
-    // console.log(req.get('Referrer'))
     let allEmp = await Employee.find()
     res.json(allEmp)
 }

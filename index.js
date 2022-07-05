@@ -1,6 +1,7 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const logger = require('./middleware/logger')
+const jsonAPiRoutes = require('./apiRoutes.json')
 
 require('dotenv').config();
 
@@ -14,7 +15,9 @@ app.use(express.urlencoded({extended: false}));
 
 app.use(logger);
 
-app.get('/', (req, res) => res.send("Hello World"))
+// Home Route
+app.get('/', (req, res) => res.json(jsonAPiRoutes));
+// API Routes
 app.use('/api/employees', require('./routes/api.employee'))
 // ENV
 const dbConn = `mongodb+srv://${process.env.MONGO_DB_USERNAME}:${process.env.MONGO_DB_PASS}@${process.env.MONGO_DB_CLUSTER}.hvghisd.mongodb.net/${process.env.MONGO_DB_DB}`

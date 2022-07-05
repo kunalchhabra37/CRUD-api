@@ -1,0 +1,55 @@
+{
+    "GET":{
+        "/api/empoyees":{
+            "description":"Get all employees"
+        }, 
+        "/api/employees/get":{
+            "description":"Get employee by qureies params",
+            "queries": {
+                "name": "string",
+                "status": ["active", "inactive", "true","false"],
+                "role" : "string"
+            }
+        }
+    }, 
+    "POST": {
+        "/api/employees":{
+            "description":"Create new employee",
+            "headers": {
+                "Content-Type": "application/json"
+            },
+            "body": {
+                "firstName": "string",
+                "lastName": "string",
+                "age": "number",
+                "role" : "string",
+                "phone": "number"
+            }
+        }
+    },
+    "PUT": {
+        "/api/employees":{
+            "description":"Update employee by query params", 
+            "queries": {
+                "name": "string",
+                "status": ["active", "inactive", "true","false"],
+                "role" : "string"
+            },
+            "headers": {
+                "Content-Type": "application/json"
+            },
+            "body": "Update Parameters"
+        }
+    }, 
+    "DELETE": {
+        "/api/employees/delete":{
+        "description":"Delete employee by query Params"
+        },
+        "queries": {
+            "name": "string",
+            "status": ["active", "inactive", "true","false"],
+            "role" : "string"
+        }
+    }
+        
+}
