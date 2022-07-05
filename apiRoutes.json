@@ -10,6 +10,9 @@
                 "status": ["active", "inactive", "true","false"],
                 "role" : "string"
             }
+        },
+        "/api/logs":{
+            "description":"Get all logs"
         }
     }, 
     "POST": {

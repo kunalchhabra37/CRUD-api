@@ -12,13 +12,14 @@ const app = express();
 // Body Parser
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
-
+// Middleware to log requests
 app.use(logger);
 
 // Home Route
 app.get('/', (req, res) => res.json(jsonAPiRoutes));
 // API Routes
 app.use('/api/employees', require('./routes/api.employee'))
+app.use('/api/logs', require('./routes/api.logs'))
 // ENV
 const dbConn = `mongodb+srv://${process.env.MONGO_DB_USERNAME}:${process.env.MONGO_DB_PASS}@${process.env.MONGO_DB_CLUSTER}.hvghisd.mongodb.net/${process.env.MONGO_DB_DB}`
 const PORT = process.env.PORT || 5000;
