@@ -10,3 +10,24 @@
 - run `npm install` to install all the dependencies
 - run `npm run dev` for devlopment enviornment
 - run `npm run prod` for live deployment
+
+## API Endpoints
+###### GET /api/empoyees
+- Get all employees
+###### GET /api/employees/get
+- Get Employees by query parms
+- queries - name(string) or status(active, inactive, true, false) or role
+###### GET /api/logs
+- Get all API Request Logs
+###### POST /api/empoyees
+- Create New Employees
+- headers - Content-Type: "application/json"
+- body - firstName, lastName, role, age, phone
+###### PUT /api/empoyees
+- Update an existing Employee
+- queries - name(string) or status(active, inactive, true, false) or role
+- headers - Content-Type: "application/json"
+- body - contents to be updated
+###### DELETE /api/empoyees
+- Delete employee by query Params
+- queries - name(string) or status(active, inactive, true, false) or role
